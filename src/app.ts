@@ -5,6 +5,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import authRoutes from './routes/authRoutes'
 import usuarioRoutes from './routes/usuarioRoutes';
+import categoriaRoutes from './routes/categoriaRoutes';
 
 class Server {
     private app: Application;
@@ -39,7 +40,8 @@ class Server {
     //configura las rutas
     routes() {
         this.app.use("/", authRoutes);
-        this.app.use("/usuario", usuarioRoutes)
+        this.app.use("/usuario", usuarioRoutes);
+        this.app.use('/categorias', categoriaRoutes);
     }
 }
 
